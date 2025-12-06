@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+.DS_Store
+
+# Build artifacts
+**/bin
+**/obj
+**/TestResults
+
+# Archives
+archive
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Documentation
+README.md

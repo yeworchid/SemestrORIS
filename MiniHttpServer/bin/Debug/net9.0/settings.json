@@ -1,0 +1,13 @@
+{
+  "SearcherUri": "Searcher",
+  "ChatGPTUri": "ChatGPT",
+  "OlaraUri": "Olara",
+  "LoginUri": "LoginForm",
+  "Domain": "localhost",
+  "Port": "1337",
+  "SmtpServer": "smtp.gmail.com",
+  "SmtpPort": 587,
+  "FromEmail": "kaleevbd@gmail.com",
+  "AppPassword": "pqmh kzky lyzw qfuv",
+  "ConnectionString": "Host=localhost;Port=5432;Database=usersdb;Username=postgres;Password=password"
+}

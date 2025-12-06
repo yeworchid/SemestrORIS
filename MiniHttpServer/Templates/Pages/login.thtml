@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Результат входа</h1>
+    
+    $if(success)
+        <div class="success">
+            <h2>✅ Успешно!</h2>
+            <p>${message}</p>
+            <p>Email: ${email}</p>
+        </div>
+    $else
+        <div class="error">
+            <h2>❌ Ошибка</h2>
+            <p>${message}</p>
+        </div>
+    $endif
+    
+    <br>
+    <a href="/auth">← Вернуться к форме входа</a>
+</body>
+</html>
+ 

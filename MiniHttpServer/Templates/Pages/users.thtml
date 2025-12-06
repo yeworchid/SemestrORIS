@@ -1,0 +1,6 @@
+<h1>Список пользователей</h1>
+<ul>
+$foreach(var user in users)
+    <li>ID: ${user.Id} - ${user.Email} (${user.Role})</li>
+$endfor
+</ul>

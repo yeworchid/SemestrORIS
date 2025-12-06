@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Page Title</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <h1>36°</h1>
+            <h2>Ahmedabad</h2>
+        </div>
+        <div class="main">
+            <div class="placeholder"></div>
+            <div class="time-box">
+                <h1>09:11:01</h1>
+                <h2>Good Morning, Saad.</h2>
+            </div>
+            <div class="actions-box">
+                <div class="search-box">
+                    <img src="./images/search.png" />
+                    <input type="text" placeholder="Search"/>
+                </div>
+                <ul>
+                    <li><img class="icon" src="./images/yt.png" /></li>
+                    <li><img class="icon" src="./images/gpt.png" /></li>
+                    <li><img class="icon" src="./images/gg.png" /></li>
+                    <li><img class="icon" src="./images/ds.png" /></li>
+                    <li><img class="icon" src="./images/gh.png" /></li>
+                    <li><img class="icon" src="./images/in.png" /></li>
+                    <li><img class="icon" src="./images/plus.png" /></li>
+                </ul>
+            </div>
+        </div>
+        <style>
+            .header {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                text-align: right;
+            }
+
+            .header h1 {
+                font-size: 32px;
+                margin: 0;
+                line-height: 1;
+            }
+
+            .header h2 {
+                font-size: 20px;
+                margin: 4px 0 0;
+                line-height: 1.2;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main {
+                padding: 16px 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 60px;
+            }
+
+            .time-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .actions-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+
+            .icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .search-box {
+                position: relative;
+                display: inline-block;
+            }
+
+            .search-box input {
+                width: 600px;
+                height: 65px;
+                background-color: #FAFAFA;
+                border: 1px solid #EEEEEE;
+                border-radius: 18px;
+                font-size: 25px;
+                padding-left: 55px;
+            }
+
+            .search-box img {
+                width: 28px;
+                height: 28px;
+                position: absolute;
+                left: 18px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+                gap: 30px;
+            }
+
+            li {
+                width: 65px;
+                height: 65px;
+                background-color: #FAFAFA;
+                border: 1px solid #EEEEEE;
+                border-radius: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+
+            li:hover {
+                background-color: #eaeaea;
+            }
+
+            h1 {
+                font-size: 74px;
+                font-family: 'Afacad', sans-serif;
+                color: #212121;
+                margin: 0;
+            }
+
+            h2 {
+                font-size: 36px;
+                font-family: 'Afacad', sans-serif;
+                color: #6E6CDF;
+                margin: 0;
+            }
+
+            @media (max-width: 768px) {
+                .actions-box input {
+                    width: 345px;
+                    height: 57px;
+                }
+
+                ul li:nth-child(n+6) {
+                    display: none;
+                }
+
+                .header h1 {
+                font-size: 22px;
+                }
+
+                .header h2 {
+                    font-size: 14px;
+                }
+
+                h1 {
+                    font-size: 64px;
+                }
+
+                h2 {
+                    font-size: 32px;
+                }
+
+                ul {
+                    gap: 36px;
+                }
+
+                li {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 16px;
+                }
+
+                .actions-box {
+                    gap: 20px;
+                }
+            }
+        </style>
+    </body>
+</html>

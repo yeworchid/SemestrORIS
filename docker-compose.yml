@@ -1,0 +1,45 @@
+services:
+  # база данных postgres
+  postgres:
+    image: postgres:16
+    container_name: travel_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: usersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # автоматическая инициализация БД при первом запуске
+      - ./MiniHttpServer/Database/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./MiniHttpServer/Database/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d usersdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # наше приложение
+  app:
+    build:
+      context: .
+      dockerfile: MiniHttpServer/Dockerfile
+    container_name: mini_http_server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # переопределяем connection string чтобы использовать имя контейнера postgres
+      ConnectionString: "Host=postgres;Port=5432;Database=usersdb;Username=postgres;Password=password"
+    ports:
+      - "1337:1337"
+    volumes:
+      # если нужно будет менять settings.json без пересборки
+      - ./MiniHttpServer/Settings:/app/Settings
+      - ./MiniHttpServer/settings.json:/app/settings.json
+
+volumes:
+  postgres_data:
